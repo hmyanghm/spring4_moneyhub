@@ -11,7 +11,6 @@ app = (()=>{
         _ = $.ctx();
         js = $.js();
         authjs = js +'/cmm/auth.js'
-        alert('authjs컨텍스트 값 :'+authjs);
     }
     let onCreate =()=>{
         init()
@@ -23,6 +22,5 @@ app = (()=>{
         .fail(()=>{alert(WHEN_ERR)}
         )
     }
-    return {run:run}
+    return {run : run}
 })();
-//alert('컨텍스트:' +$.ctx());

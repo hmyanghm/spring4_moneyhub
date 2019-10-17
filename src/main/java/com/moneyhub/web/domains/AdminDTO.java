@@ -1,9 +1,7 @@
 package com.moneyhub.web.domains;
 
 import java.io.Serializable;
-
 import org.springframework.stereotype.Component;
-
 import lombok.Data;
 
 @Data @Component
