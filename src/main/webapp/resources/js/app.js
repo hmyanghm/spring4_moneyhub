@@ -15,12 +15,14 @@ app = (()=>{
     let onCreate =()=>{
         init()
         $.when(
-                $.getScript(authjs)
+            $.getScript(authjs)
         )
-        .done(()=>{auth.onCreate()}
-        )
-        .fail(()=>{alert(WHEN_ERR)}
-        )
+        .done(()=>{
+        	auth.onCreate()
+        })
+        .fail(()=>{
+        	alert(WHEN_ERR)
+        });
     }
-    return {run : run}
+    return {run}
 })();
