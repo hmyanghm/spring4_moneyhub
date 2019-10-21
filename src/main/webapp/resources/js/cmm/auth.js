@@ -29,8 +29,8 @@ auth =(()=>{
 		   href: '#',
 		   click : e=>{
 			   e.preventDefault();
-               let data = {uid : $('#userid').val(), pwd : $('#password').val()}
-               alert('전송아이디: '+data.uid)
+               let data = {cid : $('#clientid').val(), pwd : $('#password').val(), cname : $('#cname').val()}
+               alert('전송아이디: '+data.cid)
                $.ajax({
             	   url : _+'/user/join',
             	   type : 'POST',
@@ -38,7 +38,7 @@ auth =(()=>{
             	   data : JSON.stringify(data),
             	   contentType : 'application/json',
             	   success : d => {
-            		   alert('AJAX 성공 아이디: ,'+d.uid+', 성공 비번: '+d.pwd)
+            		   alert('AJAX 성공 아이디: '+d.cid+', 성공 비번: '+d.pwd)
             		   login()
             	   },
             	   error : e => {
@@ -53,18 +53,36 @@ auth =(()=>{
    let login =()=>{
 	   let x = {css: $.css(), img: $.img()}
 	   $('head').html(auth_vue.login_head(x))
-	   $('body').html(auth_vue.login_body(x)
-			    .addClass('text-center')
-			    )
+	   $('body').addClass('text-center')
+	   			.html(auth_vue.login_body(x))
        $('<button>',{
 				type : "submit",
 				text : "sign in",
 				click : e => {
-					e.preventDefault();
+					e.preventDefault()
+					let data = {cid : $('#cid').val(), pwd : $('#pwd').val()}
+					$.ajax({
+						url : _+'/user/login',
+						type : 'POST',
+						dataType : 'json',
+						data : JSON.stringify(data),
+						contentType : 'application/json',
+						success : d => {
+							alert(d.cname+'님 환영합니다.')
+							mypage()
+						},
+						error : e => {
+							alert('AJAX 실패')
+						}
+					})
 				}
         })
    		.addClass("btn btn-lg btn-primary btn-block")
    		.appendTo('#btn_login')
+   }
+   let mypage =()=>{
+	   let x = {css: $.css(), img: $.img()}
+	   $('body').html(auth_vue.mypage(x))
    }
    return{onCreate, join, login}
 })();

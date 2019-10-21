@@ -91,8 +91,8 @@ auth_vue = {
         '      <form class="needs-validation" novalidate="">'+
         '        <div class="row">'+
         '          <div class="col-md-6 mb-3">'+
-        '            <label for="userid">USERID</label>'+
-        '            <input type="text" class="form-control" id="userid" placeholder="" value="" required="">'+
+        '            <label for="clientid">ID</label>'+
+        '            <input type="text" class="form-control" id="clientid" placeholder="" value="" required="">'+
         '            <div class="invalid-feedback">'+
         '              Valid first name is required.'+
         '            </div>'+
@@ -106,12 +106,12 @@ auth_vue = {
         '          </div>'+
         '        </div>'+
         '       <div class="mb-3">'+
-        '          <label for="username">Username</label>'+
+        '          <label for="username">NAME</label>'+
         '          <div class="input-group">'+
         '            <div class="input-group-prepend">'+
         '              <span class="input-group-text">@</span>'+
         '            </div>'+
-        '            <input type="text" class="form-control" id="username" placeholder="Username" required="">'+
+        '            <input type="text" class="form-control" id="cname" placeholder="" required="">'+
         '            <div class="invalid-feedback" style="width: 100%;">'+
         '              Your username is required.'+
         '            </div>'+
@@ -275,9 +275,9 @@ auth_vue = {
 		'	  <img class="mb-4" src="'+x.img+'/bootstrap-solid.svg" alt="" width="72" height="72">'+
 		'	  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>'+
 		'	  <label for="inputEmail" class="sr-only">Email address</label>'+
-		'	  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">'+
+		'	  <input type="text" id="cid" class="form-control" placeholder="Email address" required="" autofocus="">'+
 		'	  <label for="inputPassword" class="sr-only">Password</label>'+
-		'	  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">'+
+		'	  <input type="password" id="pwd" class="form-control" placeholder="Password" required="">'+
 		'	  <div class="checkbox mb-3">'+
 		'	    <label>'+
 		'	      <a id="a_go_join" href="#">GO JOIN</a>'+
@@ -287,4 +287,65 @@ auth_vue = {
 		'	  <p class="mt-5 mb-3 text-muted">© 2017-2019</p>'+
 		'	</form>'
 	},
+	mypage : x=>{
+		return '<link rel="stylesheet" href="'+x.css+'/style.css" />'+
+		'<link rel="stylesheet" href="'+x.css+'/head_style.css" />'+
+		'<div class="wrapper" >'+
+		'	<div class="header" >'+
+		'		<div class="header_1">'+
+		'			<a class="navbar-brand " href="#">Moneyhub</a>'+
+		'			  '+
+		'		</div>'+
+		'		<div>'+
+		'			<form class="form-inline my-2 my-lg-0">'+
+		'		      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">'+
+		'		      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>'+
+		'		    </form>'+
+		'		</div>'+
+		'		<div>'+
+		'		</div>'+
+		'	</div>'+
+		'	<div>'+
+		'		<nav class="navbar navbar-expand-md navbar-dark bg-dark">'+
+		'		  <div class="collapse navbar-collapse" id="navbarsExampleDefault">'+
+		'		    <ul class="navbar-nav mr-auto">'+
+		'		      <li class="nav-item dropdown">'+
+		'		        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">환전</a>'+
+		'		        <div class="dropdown-menu" aria-labelledby="dropdown01">'+
+		'		          <a class="dropdown-item" href="#">일반 환전</a>'+
+		'		          <a class="dropdown-item" href="#">자동 환전</a>'+
+		'		          <a class="dropdown-item" href="#">예측 자동 환전</a>'+
+		'		        </div>'+
+		'		      </li>'+
+		'		      <li class="nav-item dropdown">'+
+		'		        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">환전 조회</a>'+
+		'		        <div class="dropdown-menu" aria-labelledby="dropdown01">'+
+		'		          <a class="dropdown-item" href="#">실시간 환율 조회</a>'+
+		'		          <a class="dropdown-item" href="#">은행별 환율 조회</a>'+
+		'		          <a class="dropdown-item" href="#">환율 계산기</a>'+
+		'		        </div>'+
+		'		      </li>'+
+		'		      <li class="nav-item dropdown">'+
+		'		        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">환전 추이</a>'+
+		'		        <div class="dropdown-menu" aria-labelledby="dropdown01">'+
+		'		          <a class="dropdown-item" href="#">환율 추이</a>'+
+		'		          <a class="dropdown-item" href="#">환율 분석</a>'+
+		'		        </div>'+
+		'		      </li>'+
+		'		    </ul>'+
+		'		    '+
+		'		  </div>'+
+		'		</nav>'+
+		'	</div>'+
+		'	<div class="main">'+
+		'		<div class="main_left">'+
+		'			<img class="map_img" src="'+x.img+'/map1.png">'+
+		'		</div>'+
+		'		<div class="main_right">'+
+		'		'+
+		'		</div>'+
+		'	</div>'+
+		'	<div class="bg-dark"></div>'+
+		'</div>'
+	}
 };
