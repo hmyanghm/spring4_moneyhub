@@ -81,7 +81,7 @@ auth =(()=>{
    		.appendTo('#btn_login')
    }
    let mypage =()=>{
-	   let x = {css: $.css(), img: $.img()}
+	   let x = {css : $.css(), img : $.img()}
 	   $('body').html(auth_vue.mypage(x))
    }
    return{onCreate, join, login}
